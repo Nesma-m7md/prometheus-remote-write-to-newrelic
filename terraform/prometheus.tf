@@ -30,12 +30,6 @@ provider "kubernetes" {
   config_context = "minikube"
 }
 
-provider "helm" {
-  kubernetes {
-    config_path = "~/.kube/config"
-  }
-}
-
 #################### Prometheus ####################
 
 resource "kubernetes_secret" "nr-l" {
