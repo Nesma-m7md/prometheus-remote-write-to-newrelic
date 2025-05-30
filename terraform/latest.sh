@@ -14,7 +14,7 @@ function check_deps() {
 
 function extract_data() {
   latest=$(curl -s https://api.github.com/repos/prometheus-operator/prometheus-operator/releases/latest | jq -cr .tag_name)
-  jq -n --arg my_ip "$my_ip" '{"latest":"'$latest'"}'
+  jq -n --arg latest "$latest" '{"latest":"'$latest'"}'
 }
 
 check_deps
